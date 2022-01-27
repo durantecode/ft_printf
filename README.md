@@ -1,4 +1,4 @@
-# ft_printf - Replicate printf function in C#
+# ft_printf - Replicate printf function in C #
 
 ## This is my ft_printf project for 42-Cursus Madrid 2021 ##
 
