@@ -6,7 +6,7 @@
 #    By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/20 13:00:07 by ldurante          #+#    #+#              #
-#    Updated: 2021/06/29 22:30:22 by ldurante         ###   ########.fr        #
+#    Updated: 2022/02/09 00:11:49 by ldurante         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME = libftprintf.a
 CC = gcc
-FLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 HEADER = includes
 LIBFT = libft
 RM = rm -f
@@ -62,11 +62,11 @@ $(NAME): $(OBJS)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(HEADER)/ft_printf.h
 		 		 mkdir -p objs
-		 		 $(CC) $(FLAGS) -I $(HEADER) -o $@ -c $<
+		 		 $(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
 				 
 test: 	all
 		$(CC) -c main.c
-		$(CC) $(FLAGS) main.o $(NAME)
+		$(CC) $(CFLAGS) main.o $(NAME)
 		@echo "$(YELLOW) **** RUN TEST MAIN **** $(NO_COLOR)"
 		./a.out | cat -e
 		$(RM) main.o a.out
